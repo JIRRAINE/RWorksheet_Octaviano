@@ -54,7 +54,7 @@
       numFrom20To60
     
 # 8.3 Mean of numbers from 20 to 60
-      meanOfNumFrom20to60 <- seq(20,60)
+      meanOfNumFrom20to60 <- mean(numFrom20To60)
       meanOfNumFrom20to60
 
 # 8.4 Sum of numbers from 51 to 91
@@ -94,9 +94,8 @@
       totl_data_pts
       
  # 12
-      x <- 0 + x + 5 +
-      
-      # the code contains a syntax error
+      {x <- 0 + x + 5 +}
+      # code contains a syntax error
       # R reads it as two consecutive plus signs and a closing bracket
       # without a corresponding opening bracket,
       # you can fix it by removing the extra plus sign at the end so it will
@@ -104,7 +103,7 @@
       
       
 # 13
-      score <- c(72, 86, 92, 63, 88, 89, 91, 92, 75, 75, 77)
+      score <- c (72, 86, 92, 63, 88, 89, 91, 92, 75, 75, 77)
       score
       
       element_2 <- score[2]
@@ -117,21 +116,18 @@
       a = c(1,2,NA,4,NA,6,7)
       a
       print(a, na.print="999")
-      
       # the code replaces NA with 999 and prints the vector "a"
       
 # 15
-      name = readline(prompt="Input your name: ")
-      age = readline(prompt="Input your age: ")
+      name = readline(prompt= " Input your name: ")
+      age = readline(prompt= " Input your age: ")
       print(paste("My name is",name, "and I am",age ,"years old."))
       print(R.version.string)
-      
       # the output will depend on what the user's input for their name and age
       # after that, it will print a message with their inputted name and age
       # after that, it will print the R version information from "R.version.string"
                         
       
-    
    
     
   
