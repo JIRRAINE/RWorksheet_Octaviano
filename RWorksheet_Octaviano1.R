@@ -1,4 +1,4 @@
-# Jirraine Octaviano BSIT 2-C
+# Jirraine Octaviano    BSIT 2-C
 
 #WorkSheet1
 
@@ -94,7 +94,7 @@
       totl_data_pts
       
  # 12
-      {x <- 0 + x + 5 +}
+      { x <- 0 + x + 5 + }
       # code contains a syntax error
       # R reads it as two consecutive plus signs and a closing bracket
       # without a corresponding opening bracket,
