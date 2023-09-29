@@ -2,19 +2,21 @@
 #Worksheet2
 
 #1. Create a vector using : operator
-# a. Sequence from -5 to 5. Write the R code and its output.
+# A. Sequence from -5 to 5. Write the R code and its output.
 
   SequenceVector <- c(-5:5)
   SequenceVector
 #The output displays the sequence of integer numbers from -5 to 5.
 
-# b. x <- 1:7. What will be the value of x?
+  
+# B. x <- 1:7. What will be the value of x?
   x <- 1:7
   x
 #value of x is :1 2 3 4 5 6 7
 
+  
 #2. Create a vector using seq() function
-# a. seq(1, 3, by=0.2) # specify step size
+# A. seq(1, 3, by=0.2) # specify step size
 #Write the R script and its output. Describe the output.
 
   SeqVector <- seq(1, 3, by=0.2)
@@ -24,7 +26,7 @@
 
 
 #3. A factory has a census of its workers. There are 50 workers in total. The following list shows their ages: 34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27, 22, 37, 34, 19, 20, 57, 49, 50, 37, 46, 25, 17, 37, 43, 53, 41, 51, 35, 24,33, 41, 53, 40, 18, 44, 38, 41, 48, 27, 39, 19, 30, 61, 54, 58, 26, 18.
-# a. Access 3rd element, what is the value?
+# A. Access 3rd element, what is the value?
 
 
   ageVector <- c(34, 28, 22, 36, 27, 18, 52, 39, 42, 29, 35, 31, 27,
@@ -34,60 +36,61 @@
 
   ageElement_1 <- ageVector[3]
   ageElement_1
-
 #the value is 22
 
-# b. Access 2nd and 4th element, what are the values?
+  
+# B. Access 2nd and 4th element, what are the values?
 
   ageElement_2 <- ageVector[c(2,4)] 
   ageElement_2 
 #the values are 28 and 36
 
 
-# c. Access all but the 4th and 12th element is not included. Write the R script and its output.
+# C. Access all but the 4th and 12th element is not included. Write the R script and its output.
 
   ageElement_3 <- ageVector [c(-4,-12)]
   ageElement_3
-
 #output: 34 28 22 27 18 52 39 42 29 35 27 22 37 34 19 20 57 49 50 37 46 25 17 37 43 53 41 51 35 24 33 41 53 40 18 44 38 41 48 27 39 19 30 61 54 58 26 18
 
 
-# 4. *Create a vector x <- c("first"=3, "second"=0, "third"=9). Then named the vector, names(x).
+#4. *Create a vector x <- c("first"=3, "second"=0, "third"=9). Then named the vector, names(x).
    x <- c("first"=3, "second"=0, "third"=9)
    
-# a. Print the results. Then access x[c("first", "third")].
+# A. Print the results. Then access x[c("first", "third")].
 #Describe the output.
 
  x <- x[c("first","third")]
  x
-  #the output prints the value of first and third.
+#the output prints the value of first and third.
 
 
-# b. Write the code and its output.
+# B. Write the code and its output.
 namesX <- x[c("first","third")]
 namesX
 #output: first third 
 #          3     9 
+
 
 #5. Create a sequence x from -3:2.
 
 x <- seq(-3,2)
 x
 
-#a. Modify 2nd element and change it to 0;
+# A. Modify 2nd element and change it to 0;
   x[2] <- 0
   x
 #output: The 2nd element in the output changes to zero.
 
 
-#b. Write the code and its output.
+# B. Write the code and its output.
   x <- -3:2
   x[2]<-0
   x
 #output: -3  0 -1  0  1  2
 
-# 6. The following data shows the diesel fuel purchased by Mr. Cruz.
-  #a.Create a data frame for month, price per liter (php)and purchase-quantity (liter). Write the R scripts and its output.
+  
+#6. The following data shows the diesel fuel purchased by Mr. Cruz.
+  # A. Create a data frame for month, price per liter (php)and purchase-quantity (liter). Write the R scripts and its output.
   
   Purchases <-data.frame(
     Month = c("Jan", "Feb", "March", "Apr", "May", "June"),
@@ -107,8 +110,7 @@ x
 # 6   June           54.00                45
 
 
-
-#b.What is the average fuel expenditure of Mr. Cruz from
+# B.What is the average fuel expenditure of Mr. Cruz from
 #Jan to June? Note: Use ‘weighted.mean(liter, purchase)‘.
 # Write the R scripts and its output.
   average_expenditure <-weighted.mean(Purchases$Priceperliter , Purchases$Purchasequantity)
@@ -117,18 +119,19 @@ x
 #output: the average fuel expenditure from Jan to June is: 59.2625 PHP
 
 
-# 7. R has actually lots of built-in datasets. For example, the rivers data “gives the lengths (in miles) of 141 “major” rivers in North America, as compiled by the US Geological Survey”.
-# a. Type “rivers” in your R console.
+#7. R has actually lots of built-in datasets. For example, the rivers data “gives the lengths (in miles) of 141 “major” rivers in North America, as compiled by the US Geological Survey”.
+#  A. Type “rivers” in your R console.
   data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers),
             sd(rivers), min(rivers), max(rivers))
   data
 #output:   141.0000  83357.0000    591.1844    425.0000 243908.4086    493.8708    135.0000   3710.0000
   
-#b The results shows the built in datasets of rivers in north america and shows that length,sum,mean,median,var,sd,min,max of rivers
-# b. What are the results?
-#Output: 141.0000  83357.0000    591.1844    425.0000   243908.4086   493.8708    135.0000   3710.0000
+  
+#  B. Results shows the built in datasets of rivers in north america and shows that length,sum,mean,median,var,sd,min,max of rivers
+  #output: 141.0000  83357.0000    591.1844    425.0000   243908.4086   493.8708    135.0000   3710.0000
 
-#  c. Write the R scripts and its outputs.
+  
+#  C. Write the R scripts and its outputs.
 
   data <- c(length(rivers), sum(rivers), mean(rivers), median(rivers), var(rivers),
           sd(rivers), min(rivers), max(rivers))
@@ -142,12 +145,11 @@ x
   pay_amounts <- c(67, 90,225,110,90,332,302,41,52,88,55,44,55,40,233,34,40,47,75,25,39,45,32,40,31 )
 
 
-
-
   celeb_data <- data.frame(Celebrity = celebrities, Power_Ranking = power_rankings, Pay_Amount = pay_amounts)
 
   View(celeb_data)
 
+  
 #8. 25 most powerful celebrities and their annual pay.
 
 # A. Create a vector
