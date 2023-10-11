@@ -1,5 +1,5 @@
 ---
-title: "RWorksheet_Octaviano#3a.Rmd"
+title: "RWorksheet_Octaviano#3a"
 output: pdf_document
 date: "2023-10-04"
 ---
@@ -28,15 +28,13 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 ---
-  title: "RWorksheet_Octaviano#3a"
+title: "RWorksheet_Octaviano#3a"
 output: pdf_document
 date: "2023-10-04"
 ---
-  
-  ```{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
 ```{r name, echo = TRUE}
 
 LETTERS
@@ -90,8 +88,9 @@ temp <- c(42, 39, 34, 34, 30, 27)
 temp
 
 #C. Create a dataframe to combine the city and the temp by using ‘data.frame(). Whatthe R code and its result?
-City_temp <- data.frame(City,temp)
-City_temp
+city_temp <- data.frame(city,temp)
+View(city_temp)
+city_temp
 
 
 #D.Associate the dataframe you have created in 2.(c) by naming the columns using the names() function. Change the column names by using names() function as City and Temperature. What is the R code and its result?
@@ -112,8 +111,8 @@ str(city_temp)
 # it displayed the summary of the data frame
 
 #F. From the answer in d, what is the content of row 3 and row 4 What is its R code and its output?
-twoRows <- city_temp[3:4]
-twoRows
+twoRows <- city_temp[3:4,]
+
 
 #G. From the answer in d, display the city with highest temperature and the city with the lowest temperature. What is its R code and its output?
 highest <- city_temp[which.max(city_temp$Temperature),]
@@ -192,4 +191,5 @@ arr
 
 arr
 
+```
 ```
