@@ -1,7 +1,7 @@
 ---
-title: "RWorksheet_Octaviano#3b"
+title: "RWorksheet_Octaviano#3a"
 output: pdf_document
-date: "2023-10-11"
+date: "2023-10-04"
 ---
 
 ```{r setup, include=FALSE}
@@ -32,6 +32,7 @@ title: "RWorksheet_Octaviano#3a"
 output: pdf_document
 date: "2023-10-04"
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -192,3 +193,5 @@ arr
 arr
 
 ```
+
+
