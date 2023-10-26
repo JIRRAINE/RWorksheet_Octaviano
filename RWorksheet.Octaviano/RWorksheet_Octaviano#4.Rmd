@@ -28,33 +28,114 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-#1.The table below shows the data about shoe size and height. Create a data frame.
+# 1. The table below shows the data about shoe size and height. Create a data frame.
+Gender <- c("F", "F", "F", "F", "M", "F", "F", "F", "M", "F", "M" , "F", "M", "M", "M", "M", "F", "F", "M", "F", "F", "M", "M", "F", "M", "M", "M", "M")
 
- 
-Dataframe <- data.frame (Gender=c("F","F","F","F","M","F","F","F","M","F","M","F","M","M","M","M","F","F","M","F","F","M","M","F","M","M","M","M"),
+shoeSize <- c(6.5, 9.0, 8.5, 8.5, 10.5, 7.0, 9.5, 9.0, 13.0, 7.5, 10.5, 8.5, 12.0, 10.5, 13.0, 11.5, 8.5,5.0,10.0,6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0)
 
-ShoeSize=c(6.5,9.0,8.5,8.5,10.5,7.0,9.5,9.0,13.0,7.5,10.5,8.5,12.0,10.5,13.0,11.5,8.5,5.0,10.0,6.5,7.5,8.5,10.5,8.5,10.5,11.0,9.0,13.0),
-
-Height=c(66.0,68.0,64.5,65.0,70.0,64.0,70.0,71.0,72.0,64.0,74.5,67.0,71.0,71.0,77.0,72.0,59.0,62.0,72.0,66.0,64.0,67.0,73.0,69.0,72.0,70.0,69.0,70.0))
-Dataframe
-
-##    The dataframe contains information about individuals' genders, shoe sizes, and heights, which is likely associated with a group of people.
-
-#b. Create a subset by males and females with their corresponding shoe size and height.
-
-females_subset <- dataShoeHeight[dataShoeHeight$Gender == "F", c("Gender", "Shoe_Size", "Height")]
-females_subset
-
-males_subset <- dataShoeHeight[dataShoeHeight$Gender == "M", c("Gender", "Shoe_Size", "Height")]
-males_subset
-
-#c. Find the mean of shoe size and height of the respondents. Write the R scripts and its result.
-mean_shoe_size <- mean(df$Shoe_Size)
-mean_height <- mean(df$Height)
-
-mean_shoe_size
-mean_height
+Height <- c(66.0, 68.0, 64.5, 65.0, 70.0,64.0,70.0,71.0,72.0,64.0,74.5,67.0,71.0,71.0,77.0,72.0,59.0,62.0,72.0,66.0,64.0,67.0,73.0,69.0,72.0,70.0,69.0,70.0)
 
 
 
+householdData <- data.frame(
+  Gender = Gender,
+  ShoeSize = shoeSize,
+  Height = Height
+)
+householdData
+
+#a 
+# The data contains 28 unique data entries on individuals, including gender, shoe size, and height.
+
+#b
+males <- householdData[householdData$Gender == "M",]
+males
+females <- householdData[householdData$Gender == "F",]
+females
+
+#c
+meanOfShoeSize <- mean(householdData$ShoeSize)
+meanOfShoeSize
+meanOfHeight <- mean(householdData$Height)
+meanOfHeight
+
+#d.
+# The relationship between the two is that the shoe size is directly proportional to the height. If the height is small, the shoe size is also small.
+
+
+# 2. Construct character vector months to a factor with factor() and assign the result to factor_months_vector. Print out factor_months_vector and assert that R prints out the factor levels below the actual values.
+
+months_vector <- c("March","April","January","November","January","September","October","September","November","August","January","November","November","February","May","August","July","December","August","August","September","November","February","April")
+
+months_vector
+factor_months_vector <- factor(months_vector)
+factor_months_vector
+
+#3. Then check the summary() of the months_vector and factor_months_vector. | Inter-pret the results of both vectors. Are they both equally useful in this case?
+
+summary(months_vector)
+summary(factor_months_vector)
+
+#In the summary of months_vector, it shows the number of observations, class, and mode of the vector.
+#In the summary of factor_months_vector, it shows the frequency of each month.
+#Both are useful in different cases where the number of observations, class, mode, or frequency are needed.
+
+
+# 4. Create a vector and factor for the table below.
+factor_data <- c(1,4,3)
+new_order_data <- factor(factor_data,levels = c("East","West","North"))
+print(new_order_data)
+
+
+# 5. Enter the data below in Excel with file name = import_march.csv
+
+
+
+###   Using Conditional Statements (IF-ELSE)
+
+# 6. Full Search
+randomNum <- readline(prompt = "Enter number from 1 to 50: ")
+randomNum <- as.numeric(randomNum)
+paste("The number you have chosen is", randomNum)
+if (randomNum > 50) {
+  paste("The number selected is beyond the range of 1 to 50")
+} else if (randomNum == 20) {
+  paste("TRUE")
+} else {
+  paste(randomNum)
+}
+
+# 7. Change
+minimumBills <- function(price) {
+  
+  minBills <- price %/% 50
+  paste("The minimum no. of bills:", minBills)
+}
+minimumBills(90)
+
+
+# 8. The following is each student’s math score for one semester. Based on this, answer the following questions.
+#a. Create a dataframe from the above table. Write the R codes and its output.
+names <- c("Annie", "Thea", "Steve", "Hanna")
+grade1 <- c(85,65,75,95)
+grade2 <- c(65,75,55,75)
+grade3 <- c(85,90,80,100)
+grade4 <- c(100,90,85,90)
+math <- data.frame(
+  Name = names,
+  Grade1 = grade1,
+  Grade2 = grade2,
+  Grade3 = grade3,
+  Grade4 = grade4
+)
+math
+
+#b. Without using the rowMean function, output the average score of students whose average math score over 90 points during the semester. write R code and its output. Example Output: Annie’s average grade this semester is 88.75.
+
+
+
+#c. Without using the mean function, output as follows for the tests in which the average score was less than 80 out of 4 tests. Example output: The nth test was difficult.
+
+
+#d. d. Without using the max function, output as follows for students whose highest score for a semester exceeds 90 points. Example Output: Annie’s highest grade this semester is 95.
 
