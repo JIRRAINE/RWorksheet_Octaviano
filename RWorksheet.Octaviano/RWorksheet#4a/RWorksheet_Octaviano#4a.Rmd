@@ -68,7 +68,8 @@ print(new_order_data)
 
 
 # 5. Enter the data below in Excel with file name = import_march.csv
-imported_table <- read.table(file = "/cloud/project/RWorksheet#4/import_march.csv", header = TRUE, sep = ",")
+
+imported_table <- read.table(file =  "/cloud/project/worksheet#4/import_march.csv", header = TRUE, sep = ",")
 imported_table
 
 ###   Using Conditional Statements (IF-ELSE)
