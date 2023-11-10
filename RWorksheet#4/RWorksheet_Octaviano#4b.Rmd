@@ -38,13 +38,13 @@ print(matZero)
 
 ```{r name, echo = TRUE}
 
-userInput <- as.integer(readline("Enter 1st number for Fibonacci sequence: "))
+userInpuT <- as.integer(readline("Enter 1st number for Fibonacci sequence: "))
 
-x <- userInput
+x <- userInpuT
 y <- 0
 
 
-cat("Fibonacci sequence starting from", userInput, ":\n")
+cat("Fibonacci sequence starting from", userInpuT, ":\n")
 
 repeat {
  
@@ -92,7 +92,7 @@ barplot(totalMaleFemale,
         main = "Number of Males and Females",
         xlab = "Gender",
         ylab = "Count",
-        col = c("red", "blue"),
+        col = c("pink", "skyblue"),
         legend.text = rownames(totalMaleFemale),
         beside = TRUE)
 ```
@@ -108,7 +108,7 @@ spending_data <- data.frame(
 
 spending_data$Percentage <- spending_data$Value / sum(spending_data$Value) * 100
 
-colors <- c("red", "blue", "green", "purple")
+colors <- c("yellow", "skyblue", "orange", "yellowgreen")
 
 pie(spending_data$Value,
     labels = paste(spending_data$Category, "(",spending_data$Percentage,"%)"),
@@ -149,10 +149,10 @@ nameOfspecieS <- c("Setosa", "Versicolor", "Virginica")
 
 pie(specieS,
     labels = nameOfspecieS,
-    col = c("red", "green", "blue"),
+    col = c("green", "red", "yellow"),
     main = "Species Distribution In Iris Dataset")
 
-legend("topleft", legend = levels(iris$Species), fill = c("red", "green", "blue"),)
+legend("topleft", legend = levels(iris$Species), fill = c("green", "red", "yellow"),)
 ```
 
 D. Subset the species into setosa, versicolor, and virginica. Write the R scripts and show the last six (6) rows of each species.
