@@ -27,7 +27,6 @@ print(matZero)
   
 ```
 2. Print the string "*" using for() function. The output should be the same as shown in Figure
-
 ```{r}
   for(i in 1:5) {
   stars <- rep("*", i)
@@ -38,13 +37,13 @@ print(matZero)
 3. Get an input from the user to print the Fibonacci sequence starting from the 1st input up to 500. Use repeat and break statements. Write the R Scripts and its output.
 
 ```{r}
-userinput <- as.integer(readline("Enter starting number for Fibonacci sequence: "))
+userInput<- as.integer(readline("Enter starting number for Fibonacci sequence: "))
 
-if(is.na(userinput || userinput < 0)) {
+if(is.na(userInput || userInput < 0)) {
   cat("Please Enter Something")
 } else {
   
-x <- userInpuT
+x <- userInput
 y <- 0
 
 
