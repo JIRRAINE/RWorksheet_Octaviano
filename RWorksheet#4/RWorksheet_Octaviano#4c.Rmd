@@ -4,7 +4,6 @@ author: "Plotting the Graph using ggplot2"
 date: "2023-11-22"
 output: pdf_document
 ---
-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 token
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
