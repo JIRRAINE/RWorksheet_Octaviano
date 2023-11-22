@@ -293,12 +293,9 @@ whitePlot <- barplot(height = whiteVars$n,
         space = 0.5,
         cex.names = 0.4)
 
-png("/cloud/project/RWorksheet#4/blackVars.png", width = 800, height = 400, units = "px", pointsize = 12)
-png("/cloud/project/RWorksheet#4/whiteVars.png", width = 800, height = 400, units = "px", pointsize = 12)
 
-
-knitr::include_graphics("/cloud/project/RWorksheet#4/blackVars.png")
-knitr::include_graphics("/cloud/project/RWorksheet#4/whiteVars.png")
+knitr::include_graphics("/cloud/project/RWorksheet#4/RWorksheet#4b/blackVars.png")
+knitr::include_graphics("/cloud/project/RWorksheet#4/RWorksheet#4b/whiteVars.png")
 
 ```
 
