@@ -47,7 +47,7 @@ x <- userInput
 y <- 0
 
 
-cat("Fibonacci sequence starting from", userinpuT, ":\n")
+cat("Fibonacci sequence starting from", userInput, ":\n")
 
 repeat {
  
