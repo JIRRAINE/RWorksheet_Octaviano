@@ -1,18 +1,110 @@
 ---
-title: "Worksheet4c"
+title: "RWorksheet_Octaviano#4c"
 author: "Plotting the Graph using ggplot2"
 date: "2023-11-22"
 output: pdf_document
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 1. Use the dataset mpg
+• Download and open the mpg file. Upload it to your OWN environment
+
 a. Show your solutions on how to import a csv file into the environment.
+
 ```{r}
-str(mpg)
+
+library(readr)
+mpg_file <- read.csv ("mpg.csv")
+mpg_file
 
 ```
-2. Which manufacturer has the most models in this data set? Which model has the most variations? Show your answer.
+b.Which variables from mpg dataset are categorical?
+
 ```{r}
+
+str(mpg_file)
+
+##  manufacturer, model, trans, dry, fl, class variables are categorical
+
+```
+c. Which are continuous variables?
+
+```{r}
+is_cont <- sapply(mpg, is.numeric)
+cont_vars <- names(mpg)[is_cont]
+cont_vars
+
+```
+
+2. Which manufacturer has the most models in this data set? Which model has the most variations?
+Show your answer.
+
+```{r}
+
+manufacturer_AstablE <- table(mpg_file$manufacturer)
+names(manufacturer_AstablE)[which.max(manufacturer_asTable)]
+
+## dodge manufacturer has the most models
+
+model_AstablE <- table(mpg_file$model)
+model_AstablE
+names(model_AstablE)[which.max(model_AstablE)]
+
+## caravan 2wd has the most variations
+
+```
+a. Group the manufacturers and find the unique models. Show your codes and result.
+
+```{r}
+
+manufacturers_models <- data.frame(Manufacturer = mpg_file$manufacturer, Model = mpg_file$model)
+
+unique_mods <- unique(manufacturers_models)
+
+unique_mods
+unique_mods$mpg_file.model
+
+```
+
+b. Graph the result by using plot() and ggplot(). Write the codes and its result.
+
+
+3. Plot the model and the year using ggplot(). Use only the top 20 observations. Write the codes and its results.
+
+```{r}
+
+4. Using the pipe (%>%), group the model and get the number of cars per model. Show codes and its result
+
+a. Plot using geom_bar() using the top 20 observations only. The graphs shoudl have a title, labels and colors. Show code and results.
+
+b. Plot using the geom_bar() + coord_flip() just like what is shown below. Show codes and its result.
+
+5. Plot the relationship between cyl - number of cylinders and displ - engine displacement using geom_point with aesthetic color = engine displacement. Title should be “Relationship between
+No. of Cylinders and Engine Displacement”.
+
+a. How would you describe its relationship? Show the codes and its result.
+
+6. Plot the relationship between displ (engine displacement) and hwy(highway miles per gallon). Mapped it with a continuous variable you have identified in #1-c. What is its result? Why it produced such output?
+
+6. Import the traffic.csv onto your R environment.
+
+a. How many numbers of observation does it have? What are the variables of the traffic dataset the Show your answer.
+
+b. subset the traffic dataset into junctions. What is the R codes and its output?
+
+c. Plot each junction in a using geom_line(). Show your solution and output.
+
+7. From alexa_file.xlsx, import it to your environment
+
+a. How many observations does alexa_file has? What about the number of columns? Show your solution and answer.
+
+b. group the variations and get the total of each variations. Use dplyr package. Show solution and answer.
+
+c. Plot the variations using the ggplot() function. What did you observe? Complete the details of the graph. Show solution and answer.
+
+d. Plot a geom_line() with the date and the number of verified reviews. Complete the details of the graphs. Show your answer and solution.
+
+e. Get the relationship of variations and ratings. Which variations got the most highest in rating? Plot a graph to show its relationship. Show your solution and answer.
 ```
