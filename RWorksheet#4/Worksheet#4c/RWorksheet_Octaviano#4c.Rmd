@@ -1,10 +1,9 @@
 ---
-title: "RWorksheet_Octaviano#4c"
-author: "Plotting the Graph using ggplot2"
+title: "RWorksheet#4c"
+author: Jirraine S. Octaviano
 date: "2023-11-22"
 output: pdf_document
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -15,26 +14,26 @@ a. Show your solutions on how to import a csv file into the environment.
 
 ```{r}
 
-library(readr)
-mpg_file <- read.csv ("mpg.csv")
-mpg_file
+  library(readr)
+  mpg_file <- read.csv ("mpg.csv")
+  mpg_file
 
 ```
 b.Which variables from mpg dataset are categorical?
 
 ```{r}
 
-str(mpg_file)
+  str(mpg_file)
 
-##  manufacturer, model, trans, dry, fl, class variables are categorical
+## The manufacturer, model, trans, dry, fl, class variables are categorical
 
 ```
 c. Which are continuous variables?
 
 ```{r}
-is_cont <- sapply(mpg, is.numeric)
-cont_vars <- names(mpg)[is_cont]
-cont_vars
+  is_Cont <- sapply(mpg, is.numeric)
+  Cont_Vars <- names(mpg)[is_Cont]
+  Cont_Vars
 
 ```
 
@@ -42,26 +41,32 @@ cont_vars
 Show your answer.
 
 ```{r}
+library(dplyr)
 
-manufacturer_AstablE <- table(mpg_file$manufacturer)
-names(manufacturer_AstablE)[which.max(manufacturer_asTable)]
+ManuFacturer_most_models <- mpg %>%
+  group_by(manufacturer) %>%
+  summarise(num_models = n_distinct(model)) %>%
+  arrange(desc(num_models)) %>%
+  head(1)
 
-## dodge manufacturer has the most models
+model_most_variations <- mpg %>%
+  group_by(model) %>%
+  summarise(num_variations = n()) %>%
+  arrange(desc(num_variations)) %>%
+  head(1)
 
-model_AstablE <- table(mpg_file$model)
-model_AstablE
-names(model_AstablE)[which.max(model_AstablE)]
 
-## caravan 2wd has the most variations
+cat("Manufacturer with the most models:", ManuFacturer_most_models$manufacturer, "\n")
+cat("Model with the most variations:", model_most_variations$model, "\n")
 
 ```
 a. Group the manufacturers and find the unique models. Show your codes and result.
 
 ```{r}
 
-manufacturers_models <- data.frame(Manufacturer = mpg_file$manufacturer, Model = mpg_file$model)
+ManuFacturer_Models <- data.frame(manufacturer = mpg_file$manufacturer, model = mpg_file$model)
 
-unique_mods <- unique(manufacturers_models)
+unique_mods <- unique(ManuFacturer_Models)
 
 unique_mods
 unique_mods$mpg_file.model
@@ -70,13 +75,41 @@ unique_mods$mpg_file.model
 
 b. Graph the result by using plot() and ggplot(). Write the codes and its result.
 
+```{r}
+#Using plot
+plot(ManuFacturer_unique_Models$Unique_models,
+     names.arg = ManuFacturer_unique_Models$manufacturer,
+     main = "Number of Unique Models by Manufacturer",
+     xlab = "Manufacturer",
+     ylab = "Number of Unique Models",
+     col = "red",
+     border = "black",
+     las = 2,
+     ylim = c(0, max(ManuFacturer_unique_models$Unique_models) + 1))
+
+
+library(ggplot2)
+
+#using ggplot()
+
+ggplot(Manufacturers_unique_models, aes(x = manufacturer, y = Unique_models)) +
+  geom_bar(stat = "identity", fill = "orange", color = "skyblue") +
+  labs(title = "Number of Unique Models by Manufacturer",
+       x = "Manufacturer",
+       y = "Number of Unique Models") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+2. Same dataset will be used. You are going to show the relationship of the modeland the manufacturer.
+
 
 3. Plot the model and the year using ggplot(). Use only the top 20 observations. Write the codes and its results.
 
 ```{r}
-
+```
 4. Using the pipe (%>%), group the model and get the number of cars per model. Show codes and its result
-
+```{r}
+```
 a. Plot using geom_bar() using the top 20 observations only. The graphs shoudl have a title, labels and colors. Show code and results.
 
 b. Plot using the geom_bar() + coord_flip() just like what is shown below. Show codes and its result.
