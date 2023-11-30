@@ -226,37 +226,6 @@ Junctions_subset_4 <- subset(traffic, Junction == 4)
 
 ```
 c. Plot each junction in a using geom_line(). Show your solution and output.
-```{r}
-
-junctions_1_plot <- ggplot(Junctions_subset_1, aes(x = as.Date(junctions_subset_1$DateTime), y = Vehicles)) + 
-  geom_line() +
-  scale_x_date(date_labels = "%b-%Y") + theme(legend.position = "none") +
-  labs(title = "Junction 1", x = "Time", y = "Number of Vehicles")
-
-junctions_1_plot
-
-Junction_2_Plot <- ggPlot(junctions_subset_2, aes(x = as.Date(junctions_subset_2$DateTime), y = Vehicles)) + 
-  geom_line() +
-  Scale_x_Date(date_labels = "%b-%Y") + theme(legend.position = "none") +
-  labs(Title = "Junction 2", x = "Time", y = "Number of Vehicles")
-
-Junction_2_Plot
-
-Junction_3_Plot <- ggPlot(junctions_subset_3, aes(x = as.Date(junctions_subset_3$DateTime), y = Vehicles)) + 
-  geom_line() +
-  Scale_x_Date(date_labels = "%b-%Y") + theme(legend.position = "none") +
-  labs(Title = "Junction 3", x = "Time", y = "Number of Vehicles")
-
-Junction_3_Plot
-
-Junction_4_Plot <- ggPlot(junctions_subset_4, aes(x = as.Date(junctions_subset_4$DateTime), y = Vehicles)) + 
-  geom_line() +
-  Scale_x_Date(date_labels = "%b-%Y") + theme(legend.position = "none") +
-  labs(Title = "Junction 4", x = "Time", y = "Number of Vehicles")
-
-junction_4_Plot
-
-```
 7. From alexa_file.xlsx, import it to your environment
 
 a. How many observations does alexa_file has? What about the number of columns? Show your solution and answer.
