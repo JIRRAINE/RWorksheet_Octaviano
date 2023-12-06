@@ -1,10 +1,10 @@
 ---
 title: "RWorksheet#4c"
-author: "Jirraine S. Octaviano"
+author: "Jirraine Octaviano"
 date: "2023-11-22"
-output:
-
+output: pdf_document
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -217,28 +217,28 @@ Junctions_subset_4 <- subset(traffic, Junction == 4)
 ```
 c. Plot each junction in a using geom_line(). Show your solution and output.
 ```{r}
-junction_1_plot <- ggplot(Junctions_subset_1, aes(x = as.Date(junctions_subset_1$DateTime), y = Vehicles)) + 
+junction_1_plot <- ggplot(Junctions_subset_1, aes(x = as.Date(Junctions_subset_1$DateTime), y = Vehicles)) + 
   geom_line() +
   scale_x_date(date_labels = "%b-%Y") + theme(legend.position = "none") +
   labs(title = "Junction 1", x = "Time", y = "Number of Vehicles")
 
 junction_1_plot
 
-junction_2_plot <- ggplot(junctions_subset_2, aes(x = as.Date(junctions_subset_2$DateTime), y = Vehicles)) + 
+junction_2_plot <- ggplot(Junctions_subset_2, aes(x = as.Date(Junctions_subset_2$DateTime), y = Vehicles)) + 
   geom_line() +
   scale_x_date(date_labels = "%b-%Y") + theme(legend.position = "none") +
   labs(title = "Junction 2", x = "Time", y = "Number of Vehicles")
 
 junction_2_plot
 
-junction_3_plot <- ggplot(junctions_subset_3, aes(x = as.Date(junctions_subset_3$DateTime), y = Vehicles)) + 
+junction_3_plot <- ggplot(Junctions_subset_3, aes(x = as.Date(Junctions_subset_3$DateTime), y = Vehicles)) + 
   geom_line() +
   scale_x_date(date_labels = "%b-%Y") + theme(legend.position = "none") +
   labs(title = "Junction 3", x = "Time", y = "Number of Vehicles")
 
 junction_3_plot
 
-junction_4_plot <- ggplot(junctions_subset_4, aes(x = as.Date(junctions_subset_4$DateTime), y = Vehicles)) + 
+junction_4_plot <- ggplot(Junctions_subset_4, aes(x = as.Date(Junctions_subset_4$DateTime), y = Vehicles)) + 
   geom_line() +
   scale_x_date(date_labels = "%b-%Y") + theme(legend.position = "none") +
   labs(title = "Junction 4", x = "Time", y = "Number of Vehicles")
