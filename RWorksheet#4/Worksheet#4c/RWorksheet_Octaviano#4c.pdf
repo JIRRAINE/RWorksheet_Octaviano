@@ -1,10 +1,10 @@
 ---
-title: "RWorksheet#4c"
-author: "Jirraine S. Octaviano"
-date: "2023-11-22"
-output:
-
+title: "RWorksheet_Octaviano#4c"
+author: "Jirraine Octaviano"
+date: "2023-12-05"
+output: pdf_document
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -22,16 +22,16 @@ a. Show your solutions on how to import a csv file into the environment.
 b.Which variables from mpg dataset are categorical?
 
 ```{r}
-is_Cont <- sapply(mpg_file, is.character)
-Cont_Vars <- names(mpg_file)[is_Cont]
+is_Cont <- sapply(mpg, is.character)
+Cont_Vars <- names(mpg)[is_Cont]
 Cont_Vars
 
 ```
 c. Which are continuous variables?
 
 ```{r}
-  is_Cont <- sapply(mpg_file, is.numeric)
-  Cont_Vars <- names(mpg_file)[is_Cont]
+  is_Cont <- sapply(mpg, is.numeric)
+  Cont_Vars <- names(mpg)[is_Cont]
   Cont_Vars
 
 ```
@@ -40,12 +40,12 @@ c. Which are continuous variables?
 Show your answer.
 
 ```{r}
-manufacturer_AsTablE <- table(mpg_file$manufacturer)
+manufacturer_AsTablE <- table(mpg$manufacturer)
 manufacturer_most_models <- names(manufacturer_AsTablE )[which.max(manufacturer_AsTablE)]
 
 manufacturer_most_models
 
-model_AsTablE  <- table(mpg_file$model)
+model_AsTablE  <- table(mpg$model)
 model_most_vars <- names(model_AsTablE )[which.max(model_AsTablE)]
 
 model_most_vars
@@ -217,7 +217,8 @@ Junctions_subset_4 <- subset(traffic, Junction == 4)
 ```
 c. Plot each junction in a using geom_line(). Show your solution and output.
 ```{r}
-junction_1_plot <- ggplot(Junctions_subset_1, aes(x = as.Date(junctions_subset_1$DateTime), y = Vehicles)) + 
+
+junction_1_plot <- ggplot(junctions_subset_1, aes(x = as.Date(junctions_subset_1$DateTime), y = Vehicles)) + 
   geom_line() +
   scale_x_date(date_labels = "%b-%Y") + theme(legend.position = "none") +
   labs(title = "Junction 1", x = "Time", y = "Number of Vehicles")
